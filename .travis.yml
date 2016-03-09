@@ -113,8 +113,8 @@ matrix:
 install:
   - bash ci/install.sh
 
-script:
-  - bash ci/script.sh
+#script:
+#  - bash ci/script.sh
 
 #before_deploy:
 #  - bash ci/before_deploy.sh
