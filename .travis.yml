@@ -110,8 +110,8 @@ matrix:
       env: TARGET=arm-unknown-linux-gnueabihf
       rust: nightly
 
-install:
-  - bash ci/install.sh
+#install:
+#  - bash ci/install.sh
 
 #script:
 #  - bash ci/script.sh
