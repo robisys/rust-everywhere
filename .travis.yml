@@ -119,7 +119,7 @@ script:
 before_deploy:
   - bash ci/before_deploy.sh
 
-deploy:
+#deploy:
   provider: releases
   # TODO Regenerate this api_key for your project, this one won't work for you. Here's how:
   # - Go to 'https://github.com/settings/tokens/new' and generate a Token with only the
@@ -127,27 +127,27 @@ deploy:
   # - Call `travis encrypt $github_token` where $github_token is the token you got in the previous
   # step and `travis` is the official Travis CI gem (see https://rubygems.org/gems/travis/)
   # - Enter the "encrypted value" below
-  api_key:
-    secure: aLyVgmimaRMCvh2YF4ek0ZseWqKpqCSrvvYdf5rxhZUBnYK+KKlHBsPudtmWbHTh19PPC1C3wSHa8y94IObGl3iRRTICh5e/Oz9xzCiPYlQ0ZGmtM+MfRtUq2xFRc6aaAkrnfW0ur3uxk4a7ZBIOMg3D7kG7Ah4dg5dVf26OmpSBdEijo9bcvOLHXwZIc1bby+MJl8kxzdlwaV7UTrqHQFh+tmMsoO0GQcQpCP3y45f5/8aTkHRmnC1IKCiHKDZpRFDWhdoz02NGWcCnoH43iSwOobe1jacHicmZ7dNHKT/e1tfUIPpbO81fvQ7FHifvBRoO64Wvl5l/IaoDcngv6o11JlWRxIuZnr01oDv+DW8kv9POLYeh2xzMaQkZ8NkPZl82hqr8t0q0OtXZjm/Hysdcvr0T26hbwqs1sOkAAaeRdR0zl/Log53hNqM4HaZZ0CnKGU8dSatC+NOgHEfz68fHArf8DUdKIr3By73tD7T7kJjT1h6F+4E2nYVbHrl20/PV+XO97+9LUNOy6IhbQN0hQjoHVra5oWcZy9WiWgX8IV74yw6vEAQh6XDUWtU9XR7Tl1TjaO/mR8MgOJuQkLt58QWPs50BgUD9XSvDVIurPilZ0bQzvM7js6nTupmd3oaZiYSZCxOTj0LpV34fdEaFX0qSlrSFQw6YYMAawks=
-  file: ${PROJECT_NAME}-${TRAVIS_TAG}-${TARGET}.tar.gz
+#  api_key:
+#    secure: aLyVgmimaRMCvh2YF4ek0ZseWqKpqCSrvvYdf5rxhZUBnYK+KKlHBsPudtmWbHTh19PPC1C3wSHa8y94IObGl3iRRTICh5e/Oz9xzCiPYlQ0ZGmtM+MfRtUq2xFRc6aaAkrnfW0ur3uxk4a7ZBIOMg3D7kG7Ah4dg5dVf26OmpSBdEijo9bcvOLHXwZIc1bby+MJl8kxzdlwaV7UTrqHQFh+tmMsoO0GQcQpCP3y45f5/8aTkHRmnC1IKCiHKDZpRFDWhdoz02NGWcCnoH43iSwOobe1jacHicmZ7dNHKT/e1tfUIPpbO81fvQ7FHifvBRoO64Wvl5l/IaoDcngv6o11JlWRxIuZnr01oDv+DW8kv9POLYeh2xzMaQkZ8NkPZl82hqr8t0q0OtXZjm/Hysdcvr0T26hbwqs1sOkAAaeRdR0zl/Log53hNqM4HaZZ0CnKGU8dSatC+NOgHEfz68fHArf8DUdKIr3By73tD7T7kJjT1h6F+4E2nYVbHrl20/PV+XO97+9LUNOy6IhbQN0hQjoHVra5oWcZy9WiWgX8IV74yw6vEAQh6XDUWtU9XR7Tl1TjaO/mR8MgOJuQkLt58QWPs50BgUD9XSvDVIurPilZ0bQzvM7js6nTupmd3oaZiYSZCxOTj0LpV34fdEaFX0qSlrSFQw6YYMAawks=
+#  file: ${PROJECT_NAME}-${TRAVIS_TAG}-${TARGET}.tar.gz
   # don't delete the artifacts from previous phases
-  skip_cleanup: true
+#  skip_cleanup: true
   # deploy when a new tag is pushed
-  on:
+#  on:
     # channel to use to produce the release artifacts
     # NOTE make sure you only release *once* per target
     # TODO you may want to pick a different channel
     condition: $TRAVIS_RUST_VERSION = stable
     tags: true
 
-branches:
-  only:
+#branches:
+#  only:
     # Pushes and PR to the master branch
-    - master
+#    - master
     # IMPORTANT Ruby regex to match tags. Required, or travis won't trigger deploys when a new tag
     # is pushed. This regex matches semantic versions like v1.2.3-rc4+2016.02.22
-    - /^v\d+\.\d+\.\d+.*$/
+#    - /^v\d+\.\d+\.\d+.*$/
 
-notifications:
-  email:
-    on_success: never
+#notifications:
+#  email:
+#    on_success: never
